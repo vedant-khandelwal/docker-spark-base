@@ -28,11 +28,4 @@ RUN cd "$SPARK_HOME" && \
 
 RUN apt-get update && apt-get install -y gfortran && apt-get install -y libopenblas-base liblapack-dev
 
-RUN echo "log4j.rootCategory=WARN, console" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.appender.console=org.apache.log4j.ConsoleAppender" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.appender.console.target=System.out" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.appender.console.layout=com.jcabi.log.MulticolorLayout" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.appender.console.layout.ConversionPattern=%d $${falkonry_installationId} %color{%-5p %30.30c} - %m%n" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.logger.falkonry.tercel=INFO" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.logger.org.apache.parquet=ERROR" >> /usr/local/spark/conf/log4j.executor.properties
-RUN echo "log4j.logger.parquet=ERROR" >> /usr/local/spark/conf/log4j.executor.properties
+COPY log4j.executor.properties $SPARK_HOME/conf/
