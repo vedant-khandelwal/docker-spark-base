@@ -22,8 +22,8 @@ RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hado
 
 RUN cd "$SPARK_HOME" && \
     rm jars/* && \
-    curl -O https://storage.googleapis.com/spark-resources/spark-assembly-2.1.0.tgz && \
-    tar xvf spark-assembly-2.1.0.tgz && \
+    curl -O https://storage.googleapis.com/spark-resources/spark-assembly-2.1.0-rffix.tgz && \
+    tar xvf spark-assembly-2.1.0-rffix.tgz && \
     rm spark-assembly-2.1.0.tgz
 
 RUN apt-get update && apt-get install -y gfortran && apt-get install -y libopenblas-base liblapack-dev
