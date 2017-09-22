@@ -14,7 +14,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Install Spark
-ENV SPARK_VERSION 2.1.0
+ENV SPARK_VERSION 2.2.0
 ENV HADOOP_VERSION 2.7
 ENV SPARK_HOME /usr/local/spark
 RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz | tar -xz -C /usr/local/ && \
@@ -22,9 +22,9 @@ RUN curl -s http://d3kbcqa49mib13.cloudfront.net/spark-${SPARK_VERSION}-bin-hado
 
 RUN cd "$SPARK_HOME" && \
     rm jars/* && \
-    curl -O https://storage.googleapis.com/spark-resources/spark-2.1.0-assembly-rffix.tgz && \
-    tar xvf spark-2.1.0-assembly-rffix.tgz && \
-    rm spark-2.1.0-assembly-rffix.tgz
+    curl -O https://storage.googleapis.com/spark-resources/spark-2.2.0-assembly.tgz && \
+    tar xvf spark-2.2.0-assembly.tgz && \
+    rm spark-2.2.0-assembly.tgz
 
 RUN apt-get update && apt-get install -y gfortran && apt-get install -y libopenblas-base liblapack-dev
 
