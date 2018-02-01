@@ -19,9 +19,9 @@ ENV HADOOP_VERSION 2.7.3
 ENV SPARK_HOME /usr/local/spark
 
 RUN cd /usr/local && \
-    curl -O https://storage.googleapis.com/spark-resources/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
-    tar xf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz  && \
-    ln -s /usr/local/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} ${SPARK_HOME}
+    curl -O https://storage.googleapis.com/spark-resources/spark-2.2.0-k8s-0.5.0-bin-with-hadoop-2.7.3.tgz && \
+    tar xf   spark-2.2.0-k8s-0.5.0-bin-with-hadoop-2.7.3.tgz  && \
+    ln -s /usr/local/  spark-2.2.0-k8s-0.5.0-bin-with-hadoop-2.7.3 ${SPARK_HOME}
 
 RUN apt-get update && apt-get install -y gfortran && apt-get install -y libopenblas-base liblapack-dev
 
