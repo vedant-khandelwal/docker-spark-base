@@ -19,7 +19,7 @@ ENV HADOOP_VERSION 2.7.3
 ENV SPARK_HOME /usr/local/spark
 
 RUN cd /usr/local && \
-    curl -O https://storage.googleapis.com/spark-resources/park-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
+    curl -O https://storage.googleapis.com/spark-resources/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz && \
     tar xf spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION}.tgz  && \
     ln -s /usr/local/spark-${SPARK_VERSION}-bin-hadoop${HADOOP_VERSION} ${SPARK_HOME}
 
